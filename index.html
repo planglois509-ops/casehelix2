@@ -373,15 +373,54 @@ details[open]>.faq-q::after{transform:rotate(45deg)}
 .contact-row a:hover{color:#fff}
 
 /* ══════════════════════════════════════════════════════════════
+   SECTION 8 — TESTIMONIALS  (TAN)
+   Tan bg · black text · quote cards
+══════════════════════════════════════════════════════════════ */
+#testimonials{background:var(--tan)}
+#testimonials .eyebrow{color:var(--blue)}
+#testimonials .eyebrow::before{background:var(--blue)}
+#testimonials .sh{color:var(--black)}
+#testimonials .sh em{color:var(--blue)}
+.testi-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:52px;
+}
+.testi-card{
+  background:var(--white);border-radius:16px;padding:36px 32px;
+  display:flex;flex-direction:column;gap:24px;
+}
+.testi-quote{
+  font-size:15px;color:var(--black);line-height:1.75;
+  position:relative;flex:1;
+}
+.testi-quote::before{
+  content:'\201C';font-family:var(--f-serif);font-style:italic;
+  font-size:64px;line-height:.7;color:var(--blue);
+  display:block;margin-bottom:12px;
+}
+.testi-attr{display:flex;align-items:center;gap:14px;border-top:1px solid var(--stone);padding-top:20px}
+.testi-initials{
+  width:42px;height:42px;border-radius:50%;background:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;font-weight:700;color:#fff;flex-shrink:0;letter-spacing:.03em;
+}
+.testi-name{font-size:14px;font-weight:700;color:var(--black);line-height:1.3}
+.testi-role{font-size:12px;color:var(--mid);margin-top:2px;line-height:1.4}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr}}
+
+/* ══════════════════════════════════════════════════════════════
    FOOTER  (BLACK)
    Black bg · white + blue text
 ══════════════════════════════════════════════════════════════ */
 footer{
   background:var(--black);border-top:1px solid rgba(250,246,238,.06);
-  padding:28px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;
+  padding:32px 52px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
 }
-.footer-logo img{height:32px;width:auto;display:block}
+.footer-logo img{height:48px;width:auto;display:block}
 .footer-desc{font-size:12px;color:rgba(250,246,238,.26);max-width:380px;line-height:1.65}
+.footer-right{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.footer-links{display:flex;gap:22px}
+.footer-links a{font-size:12px;color:rgba(250,246,238,.38);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(250,246,238,.75)}
 .footer-copy{font-size:12px;color:rgba(250,246,238,.18)}
 </style>
 </head>
@@ -705,7 +744,54 @@ footer{
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SECTION 8  —  CONTACT / CTA  (BLUE)
+     SECTION 8  —  TESTIMONIALS  (TAN)
+     Tan bg · black text
+════════════════════════════════════════════ -->
+<section id="testimonials">
+  <div class="container">
+    <div class="eyebrow">From the field</div>
+    <h2 class="sh">What firms are <em>saying.</em></h2>
+    <div class="testi-grid">
+
+      <div class="testi-card">
+        <div class="testi-quote">We were reviewing 60 to 70 intake calls a week just to find 12 good cases. Case Helix cut our intake workload nearly in half. Our team now spends time on cases that actually move forward — not on calls we should have screened out at the start.</div>
+        <div class="testi-attr">
+          <div class="testi-initials">SW</div>
+          <div>
+            <div class="testi-name">Sarah Whitfield</div>
+            <div class="testi-role">Managing Partner — Whitfield Disability Group</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">The score card is the first thing I look at now. When we see 75-plus, we prioritize that call immediately. When it's below 35, we can have a much faster conversation. It has completely changed how our intake team decides where to spend its time each morning.</div>
+        <div class="testi-attr">
+          <div class="testi-initials">MC</div>
+          <div>
+            <div class="testi-name">Marcus Chen</div>
+            <div class="testi-role">Intake Director — Pacific Rim Disability Advocates</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card">
+        <div class="testi-quote">I was skeptical that any scoring system could capture the nuance we look for in a strong SSDI case. After three months, I can say it absolutely does. The medical evidence quality factor alone has been worth it — we're signing better cases with less time spent finding them.</div>
+        <div class="testi-attr">
+          <div class="testi-initials">DH</div>
+          <div>
+            <div class="testi-name">Diane Hartley</div>
+            <div class="testi-role">Principal — Hartley &amp; Associates, Social Security Law</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 9  —  CONTACT / CTA  (BLUE)
      Blue bg · white text
 ════════════════════════════════════════════ -->
 <section id="contact">
@@ -734,11 +820,17 @@ footer{
          + Case Helix Logo w text dark bg
 ════════════════════════════════════════════ -->
 <footer>
-  <a href="#hero" style="text-decoration:none">
-    <img src="./assets/logo-text-dark.png" alt="Case Helix" style="height:30px;width:auto;display:block">
+  <a href="#hero" class="footer-logo" style="text-decoration:none">
+    <img src="./assets/logo-text-dark.png" alt="Case Helix">
   </a>
   <div class="footer-desc">Evidence-aware disability lead scoring for contingency law firms. Founded by a Harvard Law / AmLaw 50 attorney and a cancer survivor turned performance marketer.</div>
-  <div class="footer-copy">&copy; 2026 Case Helix</div>
+  <div class="footer-right">
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 Case Helix</div>
+  </div>
 </footer>
 
 </body>
