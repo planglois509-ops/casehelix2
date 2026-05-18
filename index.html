@@ -322,7 +322,38 @@ h1 em{font-family:var(--f-serif);font-style:italic;font-weight:600;color:var(--b
 .bar-pts{font-size:12px;font-weight:700;color:#FAF6EE;width:44px;text-align:right;flex-shrink:0}
 
 /* ══════════════════════════════════════════════════════════════
-   SECTION 7 — CONTACT  (BLUE)
+   SECTION 7 — FAQ  (WHITE)
+   White bg · black + blue text
+══════════════════════════════════════════════════════════════ */
+#faq{background:var(--white)}
+#faq .eyebrow{color:var(--blue)}
+#faq .eyebrow::before{background:var(--blue)}
+#faq .sh{color:var(--black)}
+#faq .sh em{color:var(--blue)}
+
+.faq-intro{margin-bottom:52px}
+.faq-list{max-width:780px}
+.faq-item{border-bottom:1px solid var(--stone)}
+.faq-item:first-child{border-top:1px solid var(--stone)}
+.faq-q{
+  display:flex;justify-content:space-between;align-items:center;gap:24px;
+  padding:22px 0;cursor:pointer;
+  font-size:17px;font-weight:600;color:var(--black);line-height:1.35;
+  list-style:none;user-select:none;
+}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q::after{
+  content:'+';font-size:24px;font-weight:300;color:var(--blue);
+  flex-shrink:0;line-height:1;transition:transform .25s ease;
+}
+details[open]>.faq-q::after{transform:rotate(45deg)}
+.faq-a{
+  padding:4px 0 24px;font-size:15px;
+  color:var(--mid);line-height:1.8;max-width:660px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SECTION 8 — CONTACT  (BLUE)
    Blue bg · white text
 ══════════════════════════════════════════════════════════════ */
 #contact{background:var(--blue);text-align:center}
@@ -628,7 +659,53 @@ footer{
 </section>
 
 <!-- ═══════════════════════════════════════════
-     SECTION 7  —  CONTACT / CTA  (BLUE)
+     SECTION 7  —  FAQ  (WHITE)
+     White bg · black + blue text
+════════════════════════════════════════════ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-intro">
+      <div class="eyebrow">Common Questions</div>
+      <h2 class="sh">Everything you need to <em>know.</em></h2>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item">
+        <summary class="faq-q">What exactly is Case Helix and how does it work?</summary>
+        <div class="faq-a">Case Helix scores incoming disability leads before they reach your intake team. We analyze each claimant against SSA eligibility criteria — medical evidence quality, vocational grid profile, application stage, and functional limitations — and return a numeric score with a clear pass/fail signal. Your team works the strong leads; the weak ones get filtered before anyone wastes time on them.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How is this different from the lead vendors we already use?</summary>
+        <div class="faq-a">Lead vendors sell you contact information. Case Helix tells you which of those contacts are worth pursuing. We plug in on top of your existing sources — whether that's a referral network, a marketing partner, or your own ads — and score each lead before your intake team ever picks up the phone. You keep your vendors; you just stop wasting hours on the ones who won't convert.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">How long does it take to get set up?</summary>
+        <div class="faq-a">Most firms are up and running within a week. We start with 10 scored profiles at no cost so you can see the output before committing to anything. Once you decide to move forward, we configure the data connection to your CRM and establish your scoring thresholds. There's no IT project — we handle the integration on our end.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What CRMs and intake tools do you integrate with?</summary>
+        <div class="faq-a">Leads flow directly into your existing CRM — we support the major platforms used by disability law firms and can discuss your specific setup during onboarding. If you're running a custom intake workflow, we have a straightforward API and can work with your team to connect it. The goal is zero change to your current process, just better data inside it.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">Is my client data secure and HIPAA compliant?</summary>
+        <div class="faq-a">Yes. Case Helix is built for legal intake, where data sensitivity is non-negotiable. All data is encrypted in transit and at rest. We operate under a Business Associate Agreement (BAA) and do not sell, share, or use client data for any purpose outside of scoring your leads. We can provide our full data handling documentation before you onboard.</div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-q">What does it cost, and how do we get started?</summary>
+        <div class="faq-a">We start with 10 scored profiles at no cost — no credit card, no contract. After that, pricing is based on volume and scales with your firm. Email Nicholas directly at Nicholas@casehelix.com to get your first batch scored or to talk through whether Case Helix is the right fit for your pipeline.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 8  —  CONTACT / CTA  (BLUE)
      Blue bg · white text
 ════════════════════════════════════════════ -->
 <section id="contact">
